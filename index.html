@@ -200,8 +200,8 @@ label.sm{font-size:12px;color:#666;display:flex;flex-direction:column;gap:4px;fl
     <div class="sec">
       <textarea id="prose" rows="8" placeholder="발췌할 문장을 쓰세요. 빈 줄로 문단을 나눠요."></textarea>
       <div class="row">
-        <label class="sm">캐릭터명<input type="text" id="crName" placeholder="예: 지은"></label>
-        <label class="sm">제작자<input type="text" id="crBy" placeholder="예: @Hearts"></label>
+        <label class="sm">캐릭터명<input type="text" id="crName" placeholder="예: 우재경"></label>
+        <label class="sm">제작자<input type="text" id="crBy" placeholder="예: @Sizz"></label>
       </div>
       <p class="hint">캐릭터명과 제작자는 문장 맨 아래 오른쪽에 한 줄로 작게 들어가요.</p>
     </div>
@@ -287,11 +287,11 @@ label.sm{font-size:12px;color:#666;display:flex;flex-direction:column;gap:4px;fl
     <summary>MSN 설정</summary>
     <div class="sec">
       <div class="row">
-        <label class="sm">상대 대화명<input type="text" id="themName" placeholder="☆지은☆ 학점은 B+만..."></label>
-        <label class="sm">내 대화명<input type="text" id="meName" placeholder="민호 :: 도서관 상주중"></label>
+        <label class="sm">상대 대화명<input type="text" id="themName" placeholder="☆해주☆ 이번 학기도 올A+"></label>
+        <label class="sm">내 대화명<input type="text" id="meName" placeholder="재경 :: 도서관 상주중"></label>
       </div>
       <div class="kv"><span>테마 색</span><div class="pick"><button class="btn" data-dd="msnDD"><span class="swatch" id="msnSw"></span>색 고르기 ▾</button><div class="dd cm" id="msnDD"></div></div><button class="btn" id="msnReset">기본 파랑</button></div>
-      <label class="sm">상대 이메일 (받는 사람 칸)<input type="text" id="themMail" placeholder="jieun_84@hotmail.com"></label>
+      <label class="sm">상대 이메일 (받는 사람 칸)<input type="text" id="themMail" placeholder="haeju_84@hotmail.com"></label>
       <div class="row">
         <label class="sm">상대 글자색<input type="color" id="themColor" style="height:30px;padding:2px"></label>
         <label class="sm">내 글자색<input type="color" id="meColor" style="height:30px;padding:2px"></label>
@@ -348,12 +348,12 @@ const RATIOS = {'1:1':1, '4:5':1.25, '16:9':9/16, '9:16':16/9};
 const TYPO_KEYS = ['font','fontPt','pWeight','pAlign','lineP','paraPt','lsPt','pColor','hl1','hl2','hl3','bar1','bar2','dimParen','pTop'];
 const CONTENT_KEYS = ['msgs','bulk','prose','crName','crBy','themName','meName','themMail','stTime','themPic','mePic'];
 const DEF = {
-  layout:'win', skin:'msn', ratio:'4:5', zoom:66, bg:'#dde7f3',
+  layout:'win', skin:'msn', ratio:'4:5', zoom:66, bg:'#ffffff',
   mode:'msg', msgs:[], bulk:'', head:'them', winFont:'galmuri', winFs:12,
   themName:'', meName:'', themMail:'', themColor:'#111111', meColor:'#111111', themPic:'', mePic:'', stOn:true, stTime:'',
   smsTitle:'메시지 작성', smsAlign:'center', msnColor:'#3b6cc1', smsColor:'#b3dbf0', phone:'white',
   prose:'', crName:'', crBy:'',
-  font:'pretendard', fontPt:12, pWeight:400, pAlign:'left', lineP:180, paraPt:12, lsPt:0, pColor:'#2b2b2b',
+  font:'pretendard', fontPt:14, pWeight:400, pAlign:'left', lineP:180, paraPt:12, lsPt:0, pColor:'#2b2b2b',
   hl1:'#ffe25c', hl2:'#ffaac8', hl3:'#96e6a0', bar1:'#3b6cc1', bar2:'#d9617f', dimParen:true, pTop:20,
   myColors:['#3b6cc1','#2b2b2b','#ffe25c']
 };
@@ -805,11 +805,11 @@ $('copy').onclick = async () => {
 
 $('sample').onclick = () => {
   Object.assign(S, {
-    themName:'☆지은☆ 학점은 B+만...', meName:'민호 :: 도서관 상주중', themMail:'jieun_84@hotmail.com', stTime:'2004-05-12 오전 2:14',
-    msgs:[{who:'them',text:'너 내일 전공 레포트 다 했어?'},{who:'me',text:'아니ㅋㅋ 밤샐 예정'},{who:'them',text:'끝나면 학관에서 라면 먹자 ^^'}],
+    themName:'☆해주☆ 이번 학기도 올A+', meName:'재경 :: 도서관 상주중', themMail:'haeju_84@hotmail.com', stTime:'2004-05-12 오전 2:14',
+    msgs:[{who:'them',text:'레포트 아직이야? 나 어제 다 끝냄 ^^v'},{who:'me',text:'아니ㅋㅋ 밤샐 예정'},{who:'them',text:'참고문헌 정리한 거 보내줄게. 끝나면 학관에서 라면 먹자'}],
     bulk:'오늘두 하늘이\n참 파랗더라..\n그냥 너 생각나서\n문자보내 ^^;\n(*^_^*)~좋은밤\n되세여~♪',
-    prose:'그날 밤 도서관 창밖으로는 비가 내리고 있었다. 민호는 모니터 구석에서 {h1}깜빡이는 대화창{/h}을 한참 바라보기만 했다.\n\n{b1}답장을 보내면 또 같은 자리로 돌아가게 될 것 같았다. (그게 싫지는 않았지만)',
-    crName:'민호', crBy:'@Hearts'
+    prose:'그날 밤 도서관 창밖으로는 비가 내리고 있었다. 재경은 모니터 구석에서 {h1}깜빡이는 대화창{/h}을 한참 바라보기만 했다.\n\n{b1}답장을 보내면 또 같은 자리로 돌아가게 될 것 같았다. (그게 싫지는 않았지만)',
+    crName:'우재경', crBy:'@Sizz'
   });
   syncAll(); update();
 };
